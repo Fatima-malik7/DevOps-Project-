@@ -9,6 +9,8 @@ services:
       - mongo
     volumes:
       - ./backend:/app
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/ARterior
 
   mongo:
     image: mongo:4.4

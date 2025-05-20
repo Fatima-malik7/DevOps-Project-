@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/favorites', favoritesRoutes);
 
-mongoose.connect('mongodb://host.docker.internal:27017/ARterior', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://mongo:27017/ARterior', {
     useNewUrlParser: true,
   useUnifiedTopology: true,
 })
